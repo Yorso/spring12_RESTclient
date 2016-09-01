@@ -35,14 +35,6 @@ import com.jorge.model.User;
  *  
  */
 
-
-/**
- * UserController is a standard Spring controller except for the @RestController annotation, which
- * will automatically convert the objects returned by the controller methods to JSON, using the Jackson
- * library
- *
- */
-
 @Controller
 public class UserController {
 	
@@ -50,9 +42,9 @@ public class UserController {
 	 * CLIENT SIDE
 	 * 
 	 * Try it: 
-	 * 		Run spring13_REASTserver
-	 * 		Run spring13_RESTclient
-	 * 		Write in browser: http://localhost:8080/spring13_RESTclient/user/1
+	 * 		Run spring12_REASTserver
+	 * 		Run spring12_RESTclient
+	 * 		Write in browser: http://localhost:8080/spring12_RESTclient/user/1
 	 * 
 	 * 
 	 * Use the RestTemplate class and its getForObject() method to query the REST service and
@@ -65,11 +57,11 @@ public class UserController {
 	 * 		User[] userList = restTemplate.getForObject(url, User[].class);
 	 * 
 	 */
-	@RequestMapping("user/{id}") // We get an spcific user (i.e. id=2 in url string) from server: http://localhost:8080/spring13_RESTclient/user/2
+	@RequestMapping("user/{id}") // We get an spcific user (i.e. id=2 in url string) from server: http://localhost:8080/spring12_RESTclient/user/2
 	@ResponseBody
 	// CLIENT SIDE.
 	public String user(HttpServletRequest request, @PathVariable("id") Long userId) {
-		String url = "http://localhost:8080/spring13_RESTserver/users/" + userId; // URL of the REST service to query in server
+		String url = "http://localhost:8080/spring12_RESTserver/users/" + userId; // URL of the REST service to query in server
 		
 		RestTemplate restTemplate = new RestTemplate();
 		User user = restTemplate.getForObject(url, User.class);
@@ -83,9 +75,9 @@ public class UserController {
 	// Getting usr list
 	@RequestMapping("userList")
 	@ResponseBody
-	// CLIENT SIDE. We get the user list from server: http://localhost:8080/spring13_RESTclient/userList
+	// CLIENT SIDE. We get the user list from server: http://localhost:8080/spring12_RESTclient/userList
 	public String userList() {
-		String url = "http://localhost:8080/spring13_RESTserver/users"; // URL of the REST service to query in server
+		String url = "http://localhost:8080/spring12_RESTserver/users"; // URL of the REST service to query in server
 		String res = "";
 		
 		RestTemplate restTemplate = new RestTemplate();

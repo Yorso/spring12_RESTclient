@@ -8,7 +8,6 @@ package com.jorge.config;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 /**
  * Using the Java RMI, HTTP Invoker, Hessian, and REST
@@ -27,6 +26,6 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 // @Import({ DatabaseConfig.class, SecurityConfig.class }) => //If you are using a Spring application without a 'ServletInitializer' class,
 														      // you can include other configuration classes from your primary configuration class
 
-public class AppConfig extends WebMvcConfigurerAdapter { // Extend from WebMvcConfigurerAdapter is necessary for interceptors
+public class AppConfig {
 
 }
